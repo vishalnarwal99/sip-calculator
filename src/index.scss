@@ -1,0 +1,83 @@
+body {
+  font-family: monospace;
+  font-size: large;
+  padding: 24px;
+}
+
+.App,
+.io-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.App {
+  width: max-content;
+  background-color: #e2e2e8;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px #28272c;
+  margin: auto;
+}
+
+[id*=container],
+fieldset {
+  padding: 16px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#output-container {
+  color: #ffffff;
+  background-color: #28272c;
+  padding: 24px;
+}
+
+.io-block {
+  > label {
+    align-self: center;
+  }
+
+  input, select {
+    font: inherit;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    flex: auto;
+  }
+
+  .Amount::before {
+    content: "₹";
+  }
+
+  .Percent::after {
+    content: "%";
+  }
+
+  .Year::after {
+    content: "Yr";
+  }
+
+  > :last-child {
+    padding: 4px 8px;
+    border-radius: 3px;
+    border: 1px solid #767676;
+    display: flex;
+    gap: 1ch;
+
+    &:hover {
+      border: 1px solid #4f4f4f;
+    }
+
+    &:focus-within {
+      outline: auto;
+    }
+  }
+}
+
+#stepup-type {
+  font-weight: bold;
+  margin-left: 0.6ch;
+}
